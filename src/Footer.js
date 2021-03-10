@@ -5,7 +5,7 @@ export default function Footer() {
     return (
         <>
             <h3>Footer</h3>
-            <p>&copy {year}. All rights reserved.</p>
+            <p>&copy {year}. All rights reserved. <a href="https://react-tutorial.app">React Tutorial</a></p>
         </>
     );
 }
