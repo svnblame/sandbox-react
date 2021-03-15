@@ -1,5 +1,6 @@
 import React from "react";
 
-export default function Link() {
-    return <a href="https://react-tutorial.app">React Tutorial</a>;
+export default function Link(props) {
+    const {href, children} = props;
+    return <a href={href} className="ui-link">{children}</a>;
 }
