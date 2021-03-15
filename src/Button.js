@@ -1,5 +1,8 @@
 import React from "react";
+import clsx from "clsx";
 
 export default function Button(props) {
-    return <button className={`btn-${props.size}`}>Text here</button>
+    const {children, className, ...rest} = props;
+    const classes = clsx("ui-button", className);
+    return <button className={classes} {...rest}>{children}</button>;
 }
