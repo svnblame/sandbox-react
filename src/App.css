@@ -53,6 +53,10 @@ box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.2);
   cursor: disabled;
 }
 
+.mt-16 {
+  margin-top: 5em;
+}
+
 [class^="ui-"] {
   margin: 10px;
 }
