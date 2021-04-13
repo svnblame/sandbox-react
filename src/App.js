@@ -5,6 +5,7 @@ import Container from "./Container.js";
 import Button from "./Button.js";
 import Input from "./Input.js";
 import AddToCart from "./AddToCart.js";
+import Clock from "./Clock.js";
 import Footer from "./Footer.js"
 import './App.css';
 
@@ -22,6 +23,7 @@ function App() {
             <Notifications data={notifications} />
             <Input placeholder="Enter Your Full Name" name="full_name" />&nbsp;<Button>Login</Button>
             <AddToCart />
+            <Clock />
             <Footer />
           </Container>
         </div>
