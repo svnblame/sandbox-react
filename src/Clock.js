@@ -4,13 +4,15 @@ export default function Clock() {
     const [seconds, setSeconds] = useState(0);
 
     function handleIncrementClick() {
-        if (seconds < 59) {
+        if (seconds < 10) {
             setSeconds(seconds + 1);
         }
     }
 
     return (<>
-        <h2>{seconds} seconds</h2>
-        <button className="ui-button" onClick={handleIncrementClick}>Add</button>
+        <p>
+            {seconds} seconds
+            <button className="ui-button" onClick={handleIncrementClick}>Add Seconds</button>
+        </p>
     </>);
 }
