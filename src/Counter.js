@@ -4,7 +4,7 @@ export default function Counter(props) {
     const [counter, setCounter] = useState(0);
 
     function handleButtonClick() {
-        if ("increment" == props.mode) {
+        if ("increment" === props.mode) {
             setCounter(counter + 1);
         } else {
             setCounter(counter - 1);
