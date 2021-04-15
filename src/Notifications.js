@@ -1,6 +1,10 @@
 import React from "react";
 
 export default function Notifications(props) {
-    const value = props.data.count; // Never change the state of props.data.count directly!
-    return <h3>You have {value} unread notifications.</h3>
+    return (<>
+        <h2>Welcome user</h2>
+        { props.notifications.length > 0 &&
+            <p>You've got {props.notifications.length} notifications</p>
+        }
+    </>);
 }
