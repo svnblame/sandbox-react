@@ -12,6 +12,7 @@ import Admin from "./Admin.js";
 import Dashboard from "./Dashboard.js";
 import CountDown from "./CountDown.js";
 import Grades from "./Grades.js";
+import Wallet from "./Wallet.js";
 import Footer from "./Footer.js";
 import './App.css';
 
@@ -57,6 +58,9 @@ function App() {
               <CountDown />
               <hr />
               <Grades grades={[8, 18, 10, 7, 14]} />
+            </div>
+            <div className="display-block">
+              <Wallet />
             </div>
             <Footer />
           </Container>
