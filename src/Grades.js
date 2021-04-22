@@ -1,14 +1,15 @@
 import React from "react";
 
-export default function Grades() {
-    const grades = [8, 18, 10, 7, 14];
+export default function Grades(props) {
+    const grades = props.grades;
+    const listItems = grades.map(grade => <li>{grade}</li>);
 
     // this will generate a warning, will fix later
     return <>
         <p>
             <h4>Grades:</h4>
             <ul>
-                {grades.map(grade => <li>{grade}</li>)}
+                {listItems}
             </ul>
         </p>
     </>
