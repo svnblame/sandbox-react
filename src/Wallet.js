@@ -24,10 +24,10 @@ export default function Wallet() {
     console.info(formattedDate);
 
     return <>
+        <h3>MyWallet v1</h3>
         <button className="ui-button" onClick={handleDepositClick}>Deposit 10</button>
         <button className="ui-button" onClick={handleWithdrawClick}>Withdraw 10</button>
         <h2>Total: {sum}</h2>
-        <hr />
         <button className="ui-button" onClick={handleClearClick}>Reset</button>
         <ul>
             {transactions.map(

@@ -13,6 +13,7 @@ import Dashboard from "./Dashboard.js";
 import CountDown from "./CountDown.js";
 import Grades from "./Grades.js";
 import Wallet from "./Wallet.js";
+import Wallet2 from "./Wallet2";
 import Footer from "./Footer.js";
 import './App.css';
 
@@ -61,6 +62,8 @@ function App() {
             </div>
             <div className="display-block">
               <Wallet />
+              <hr />
+              <Wallet2 />
             </div>
             <Footer />
           </Container>
