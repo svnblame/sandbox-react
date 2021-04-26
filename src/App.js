@@ -14,6 +14,7 @@ import CountDown from "./CountDown.js";
 import Grades from "./Grades.js";
 import Wallet from "./Wallet.js";
 import Wallet2 from "./Wallet2";
+import OrderInsurance from "./OrderInsurance.js";
 import Footer from "./Footer.js";
 import './App.css';
 
@@ -77,6 +78,7 @@ function App() {
               <hr />
               <Wallet2 />
             </div>
+            <OrderInsurance />
             <Footer />
           </Container>
         </div>
