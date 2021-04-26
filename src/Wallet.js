@@ -19,9 +19,7 @@ export default function Wallet() {
     const sum = transactions.reduce((total, current) => total + current, 0);
 
     let currentDatetime = new Date()
-    console.info(currentDatetime.toString());
     let formattedDate = currentDatetime.getFullYear() + "-" + addLeadingZeros(currentDatetime.getMonth() + 1) + "-" + addLeadingZeros(currentDatetime.getDate()) + " " + addLeadingZeros(currentDatetime.getHours()) + ":" + addLeadingZeros(currentDatetime.getMinutes()) + ":" + addLeadingZeros(currentDatetime.getSeconds())
-    console.info(formattedDate);
 
     return <>
         <h3>MyWallet v1</h3>
