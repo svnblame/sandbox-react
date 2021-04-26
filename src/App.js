@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useState} from "react";
 import Link from "./Link.js";
 import Notifications from "./Notifications.js";
 import Container from "./Container.js";
@@ -18,6 +18,12 @@ import Footer from "./Footer.js";
 import './App.css';
 
 function App() {
+  const [settings, setSettings] = useState({
+    dark_theme: true
+  });
+
+  const theme = settings.dark_theme ? 'dark' : 'light';
+
   const notifications = [{
       id: 1,
       text: "Welcome to our supermarket"
@@ -29,16 +35,22 @@ function App() {
       text: "Your order has shipped"
   }];
 
+  function handleToggleThemeClick() {
+    setSettings({...settings, dark_theme: !settings.dark_theme});
+  }
+
   return (
     <div className="App">
       <header className="App-header">
-        <div id="root">
+        <div id="root" className={theme}>
         <Container>
             <Link className="ui-link" href="https://react-tutorial.app"><h3>React Tutorial</h3></Link><br />
+            <h3>Theme: {theme}</h3>
+            <button className="ui-button" onClick={handleToggleThemeClick}>Toggle Theme</button>
             <Notifications notifications={notifications} />
             <Input placeholder="Enter Your Full Name" name="full_name" />&nbsp;<Button>Login</Button>
             <AddToCart />
-            <div className="display-block">
+            <div className="display-block {theme}">
               <Clock />
               <Counter mode="increment" />
               <Counter mode="decrement" />
