@@ -5,19 +5,31 @@ export default function RegisterForm() {
     const [type, setType] = useState('');
     const [motivation, setMotivation] = useState('');
 
+    function handleFormSubmit(event) {
+        event.preventDefault();
+
+        // clear form elements
+        setName('');
+        setType('');
+        setMotivation('');
+    }
+
     return <div className="display-block">
-        <form onSubmit={e => e.preventDefault()}>
+        <form onSubmit={handleFormSubmit}>
             <input
                 type="text" 
                 name="name"
                 className="ui-textfield"
                 placeholder="Enter Your Name" 
-                onChange={e => setName(e.target.value)} 
+                onChange={e => setName(e.target.value)}
+                value={name}
             />
 
             <select
                 name="type"
                 onChange={e => setType(e.target.value)}
+                value={type}
+                className="drop-down"
             >
                 <option>Choose a type</option>
                 <option>client</option>
@@ -29,6 +41,7 @@ export default function RegisterForm() {
                 className="ui-textfield"
                 placeholder="Your Motivation to Join"
                 onChange={e => setMotivation(e.target.value)}
+                value={motivation}
             />
 
             <button type="submit" name="submit-registration" className="ui-button">Register</button>
