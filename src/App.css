@@ -65,6 +65,7 @@
   border-radius: 5px;
   padding: 10px;
   margin: 10px;
+  width: 80%;
 }
 
 .App {
@@ -72,14 +73,12 @@
 }
 
 App-header {
-  /* background-color: #282c34; */
   min-height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   font-size: calc(10px + 2vmin);
-  /* color: white; */
 }
 
 .dark {
@@ -90,4 +89,14 @@ App-header {
 .light {
     background-color: white;
     color: #222;
+}
+
+.drop-down {
+  width: 180px;
+  height: 30px;
+  border: 1px solid #999;
+  font-size: calc(10px + 2vmin);
+  background-color: #eee;
+  border-radius: 5px;
+  box-shadow: 4px 4px #ccc;
 }
