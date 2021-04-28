@@ -15,6 +15,8 @@ import Grades from "./Grades.js";
 import Wallet from "./Wallet.js";
 import Wallet2 from "./Wallet2";
 import OrderInsurance from "./OrderInsurance.js";
+import OrderQuantity from "./OrderQuantity.js";
+import RegisterForm from "./RegisterForm.js";
 import Footer from "./Footer.js";
 import './App.css';
 
@@ -79,6 +81,8 @@ function App() {
               <Wallet2 />
             </div>
             <OrderInsurance />
+            <OrderQuantity />
+            <RegisterForm />
             <Footer />
           </Container>
         </div>
