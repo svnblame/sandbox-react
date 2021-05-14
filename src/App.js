@@ -48,10 +48,7 @@ function App() {
   function handleNameChange(event) {
     setName(event.target.value);
 
-    return <div>
-      <h3>Hello {name}</h3>
-      <NameForm name={name} onNameChange={handleNameChange} />
-    </div>
+    return ;
   }
 
   return (
@@ -95,7 +92,10 @@ function App() {
             <OrderInsurance />
             <OrderQuantity />
             <RegisterForm />
-            
+            <div>
+              <h3>Hello {name}</h3>
+              <NameForm name={name} onNameChange={handleNameChange} />
+            </div>
             <Footer />
           </Container>
         </div>
