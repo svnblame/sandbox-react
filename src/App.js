@@ -17,10 +17,13 @@ import Wallet2 from "./Wallet2";
 import OrderInsurance from "./OrderInsurance.js";
 import OrderQuantity from "./OrderQuantity.js";
 import RegisterForm from "./RegisterForm.js";
+import NameForm from "./NameForm.js";
 import Footer from "./Footer.js";
 import './App.css';
 
 function App() {
+  const [name, setName] = useState("");
+
   const [settings, setSettings] = useState({
     dark_theme: true
   });
@@ -40,6 +43,15 @@ function App() {
 
   function handleToggleThemeClick() {
     setSettings({...settings, dark_theme: !settings.dark_theme});
+  }
+
+  function handleNameChange(event) {
+    setName(event.target.value);
+
+    return <div>
+      <h3>Hello {name}</h3>
+      <NameForm name={name} onNameChange={handleNameChange} />
+    </div>
   }
 
   return (
@@ -83,6 +95,7 @@ function App() {
             <OrderInsurance />
             <OrderQuantity />
             <RegisterForm />
+            
             <Footer />
           </Container>
         </div>
