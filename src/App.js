@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React, {useState, useEffect} from "react";
 import Link from "./Link.js";
 import Notifications from "./Notifications.js";
 import Container from "./Container.js";
@@ -40,6 +40,20 @@ function App() {
       id: 3,
       text: "Your order has shipped"
   }];
+
+  const [counter, setCounter] = useState(0);
+
+  useEffect(() => {
+    const timerId = setTimeout(() => {
+      console.log("This will run in 1 second");
+    }, 1000);
+
+    return () => {
+      console.log("Clearing the timer. ID: " + timerId);
+      // when component gets unmounted, clear the timer
+      clearTimeout(timerId);
+    }
+  });
 
   function handleToggleThemeClick() {
     setSettings({...settings, dark_theme: !settings.dark_theme});
@@ -92,9 +106,13 @@ function App() {
             <OrderInsurance />
             <OrderQuantity />
             <RegisterForm />
-            <div>
+            <div className="display-block">
               <h3>Hello {name}</h3>
               <NameForm name={name} onNameChange={handleNameChange} />
+            </div>
+            <div className="display-block">
+              <h3>{counter}</h3>
+              <button onClick={() => setCounter(prevCounter => prevCounter + 1)}>Add</button>
             </div>
             <Footer />
           </Container>
