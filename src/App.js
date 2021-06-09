@@ -19,6 +19,7 @@ import OrderQuantity from "./OrderQuantity.js";
 import RegisterForm from "./RegisterForm.js";
 import NameForm from "./NameForm.js";
 import Clock2 from "./Clock2";
+import Stopwatch from "./Stopwatch";
 import Footer from "./Footer.js";
 import './App.css';
 
@@ -112,11 +113,13 @@ function App() {
               <NameForm name={name} onNameChange={handleNameChange} />
             </div>
             <div className="display-block">
+              <h2>Counter</h2>
               <h3>{counter}</h3>
-              <button onClick={() => setCounter(prevCounter => prevCounter + 1)}>Add</button>
+              <button className='ui-button' onClick={() => setCounter(prevCounter => prevCounter + 1)}>Add</button>
             </div>
             <div className="display-block">
               <Clock2 />
+              <Stopwatch />
             </div>
             <Footer />
           </Container>
