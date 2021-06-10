@@ -20,6 +20,7 @@ import RegisterForm from "./RegisterForm.js";
 import NameForm from "./NameForm.js";
 import Clock2 from "./Clock2";
 import Stopwatch from "./Stopwatch";
+import Count from "./Count";
 import Footer from "./Footer.js";
 import './App.css';
 
@@ -120,6 +121,7 @@ function App() {
             <div className="display-block">
               <Clock2 />
               <Stopwatch />
+              <Count />
             </div>
             <Footer />
           </Container>
