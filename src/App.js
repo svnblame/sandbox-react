@@ -21,7 +21,8 @@ import NameForm from "./NameForm.js";
 import Clock2 from "./Clock2";
 import Stopwatch from "./Stopwatch";
 import Count from "./Count";
-import Footer from "./Footer.js";
+import Wait from "./Wait";
+import Footer from "./Footer";
 import './App.css';
 
 function App() {
@@ -122,6 +123,7 @@ function App() {
               <Clock2 />
               <Stopwatch />
               <Count />
+              <Wait />
             </div>
             <Footer />
           </Container>
