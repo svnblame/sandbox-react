@@ -28,9 +28,21 @@ import './App.css';
 function App() {
   const [name, setName] = useState("");
 
-  const [settings, setSettings] = useState({
-    dark_theme: true
+  const [settings, setSettings] = useState(() => {
+      const savedSettings = localStorage.getItem('settings');
+
+      if (savedSettings) {
+          return JSON.parse(savedSettings);
+      } else {
+          return {
+              dark_theme: true
+          }
+      }
   });
+
+  useEffect(() => {
+      localStorage.setItem('settings', JSON.stringify(settings));
+  }, [settings]);
 
   const theme = settings.dark_theme ? 'dark' : 'light';
 
