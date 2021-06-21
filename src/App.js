@@ -21,7 +21,7 @@ import NameForm from "./NameForm.js";
 import Clock2 from "./Clock2";
 import Stopwatch from "./Stopwatch";
 import Count from "./Count";
-import Wait from "./Wait";
+import Users from "./Users";
 import Footer from "./Footer";
 import './App.css';
 
@@ -90,6 +90,7 @@ function App() {
             <h3>Theme: {theme}</h3>
             <button className="ui-button" onClick={handleToggleThemeClick}>Toggle Theme</button>
             <Notifications notifications={notifications} />
+            <Users />
             <Input placeholder="Enter Your Full Name" name="full_name" />&nbsp;<Button>Login</Button>
             <AddToCart />
             <div className="display-block {theme}">
@@ -135,7 +136,6 @@ function App() {
               <Clock2 />
               <Stopwatch />
               <Count />
-              <Wait />
             </div>
             <Footer />
           </Container>
