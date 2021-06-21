@@ -22,17 +22,9 @@ export default function Users() {
         }, 3000);
     }, []);
 
-    console.log('isUsersLoading: ' + isUsersLoading);
-    if (isUsersLoading) {
-        return <Loader />;
-    }
-
-    if (!users) {
-        return null;
-    }
-
     return <>
-        <h1>{users && users.length} Users</h1>
+        <h1>{users && users.length + " Users"}</h1>
+        {isUsersLoading && <Loader />}
         <ul>
             {users && users.map(user => <li key={user.id}>{user.name}</li>)}
         </ul>
