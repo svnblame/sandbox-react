@@ -3,7 +3,7 @@ import Loader from "./Loader";
 
 export default function Users() {
     const [users, setUsers] = useState();
-    const [isUsersLoading, setIsUsersLoading] = useState(true);
+    const [isUsersLoading, setIsUsersLoading] = useState(false);
 
     function handleLoadUsersClick() {
         setIsUsersLoading(true);
