@@ -1,11 +1,13 @@
-import {useState, useEffect} from "react";
+import {useState} from "react";
 import Loader from "./Loader";
 
 export default function Users() {
     const [users, setUsers] = useState();
-    const [isUsersLoading, setIsUsersLoading] = useState(true);
+    const [isUsersLoading, setIsUsersLoading] = useState(false);
 
-    useEffect(() => {
+    function handleLoadUsersClick() {
+        setIsUsersLoading(true);
+
         setTimeout(() => {
             console.log("Simulating slow network...");
 
@@ -20,9 +22,10 @@ export default function Users() {
                     setIsUsersLoading(false);
                 });
         }, 3000);
-    }, []);
+    }
 
     return <>
+        <button className="ui-button" onClick={handleLoadUsersClick} disabled={isUsersLoading}>Load Users</button>
         <h1>{users && users.length + " Users"}</h1>
         {isUsersLoading && <Loader />}
         <ul>

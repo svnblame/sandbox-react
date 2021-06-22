@@ -89,7 +89,7 @@ function App() {
             <Link className="ui-link" href="https://react-tutorial.app"><h3>React Tutorial</h3></Link><br />
             <h3>Theme: {theme}</h3>
             <button className="ui-button" onClick={handleToggleThemeClick}>Toggle Theme</button>
-            <Notifications notifications={notifications} />
+            <Notifications notifications={notifications} user="Joe Schmoe"/>
             <Users />
             <Input placeholder="Enter Your Full Name" name="full_name" />&nbsp;<Button>Login</Button>
             <AddToCart />
