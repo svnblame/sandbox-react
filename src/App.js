@@ -1,27 +1,28 @@
 import React, {useState, useEffect} from "react";
-import Link from "./Link.js";
-import Notifications from "./Notifications.js";
-import Container from "./Container.js";
-import Button from "./Button.js";
-import Input from "./Input.js";
-import AddToCart from "./AddToCart.js";
-import Clock from "./Clock.js";
-import Counter from "./Counter.js";
+import Link from "./Link";
+import Notifications from "./Notifications";
+import Container from "./Container";
+import Button from "./Button";
+import Input from "./Input";
+import AddToCart from "./AddToCart";
+import Clock from "./Clock";
+import Counter from "./Counter";
 import ConfigurableCounter from "./ConfigurableCounter";
-import Admin from "./Admin.js";
-import Dashboard from "./Dashboard.js";
-import CountDown from "./CountDown.js";
-import Grades from "./Grades.js";
-import Wallet from "./Wallet.js";
+import Admin from "./Admin";
+import Dashboard from "./Dashboard";
+import CountDown from "./CountDown";
+import Grades from "./Grades";
+import Wallet from "./Wallet";
 import Wallet2 from "./Wallet2";
-import OrderInsurance from "./OrderInsurance.js";
-import OrderQuantity from "./OrderQuantity.js";
-import RegisterForm from "./RegisterForm.js";
-import NameForm from "./NameForm.js";
+import OrderInsurance from "./OrderInsurance";
+import OrderQuantity from "./OrderQuantity";
+import RegisterForm from "./RegisterForm";
+import NameForm from "./NameForm";
 import Clock2 from "./Clock2";
 import Stopwatch from "./Stopwatch";
 import Count from "./Count";
 import Users from "./Users";
+import PostGrade from "./PostGrade"
 import Footer from "./Footer";
 import './App.css';
 
@@ -136,6 +137,9 @@ function App() {
               <Clock2 />
               <Stopwatch />
               <Count />
+            </div>
+            <div className="display-block">
+                <PostGrade />
             </div>
             <Footer />
           </Container>
