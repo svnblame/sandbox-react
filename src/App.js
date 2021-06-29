@@ -22,7 +22,8 @@ import Clock2 from "./Clock2";
 import Stopwatch from "./Stopwatch";
 import Count from "./Count";
 import Users from "./Users";
-import PostGrade from "./PostGrade"
+import PostGrade from "./PostGrade";
+import CurrencySelector from "./CurrencySelector";
 import Footer from "./Footer";
 import './App.css';
 
@@ -140,6 +141,7 @@ function App() {
             </div>
             <div className="display-block">
                 <PostGrade />
+                <CurrencySelector />
             </div>
             <Footer />
           </Container>
