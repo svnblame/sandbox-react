@@ -1,4 +1,5 @@
 import React, {useState, useEffect} from "react";
+import useWelcomeGreeting from "./useWelcomeGreeting";
 import Link from "./Link";
 import Notifications from "./Notifications";
 import Container from "./Container";
@@ -18,7 +19,6 @@ import OrderInsurance from "./OrderInsurance";
 import OrderQuantity from "./OrderQuantity";
 import RegisterForm from "./RegisterForm";
 import NameForm from "./NameForm";
-import Clock2 from "./Clock2";
 import Stopwatch from "./Stopwatch";
 import Count from "./Count";
 import Users from "./Users";
@@ -28,50 +28,39 @@ import Footer from "./Footer";
 import './App.css';
 
 function App() {
-  const [name, setName] = useState("");
+    useWelcomeGreeting();
 
-  const [settings, setSettings] = useState(() => {
-      const savedSettings = localStorage.getItem('settings');
+    const [name, setName] = useState("");
+    const [settings, setSettings] = useState(() => {
+        const savedSettings = localStorage.getItem('settings');
 
-      if (savedSettings) {
-          return JSON.parse(savedSettings);
-      } else {
-          return {
-              dark_theme: true
-          }
-      }
-  });
+        if (savedSettings) {
+            return JSON.parse(savedSettings);
+        } else {
+            return {
+                dark_theme: true
+            }
+        }
+    });
 
-  useEffect(() => {
-      localStorage.setItem('settings', JSON.stringify(settings));
-  }, [settings]);
+    useEffect(() => {
+        localStorage.setItem('settings', JSON.stringify(settings));
+    }, [settings]);
 
-  const theme = settings.dark_theme ? 'dark' : 'light';
+    const theme = settings.dark_theme ? 'dark' : 'light';
 
-  const notifications = [{
-      id: 1,
-      text: "Welcome to our supermarket"
+    const notifications = [{
+        id: 1,
+        text: "Welcome to our supermarket"
     }, {
-      id: 2,
-      text: "Your order has shipped"
+        id: 2,
+        text: "Your order has shipped"
     }, {
-      id: 3,
-      text: "Your order has shipped"
-  }];
+        id: 3,
+        text: "Your order has shipped"
+    }];
 
-  const [counter, setCounter] = useState(0);
-
-  useEffect(() => {
-    const timerId = setTimeout(() => {
-      console.log("This will run in 1 second");
-    }, 1000);
-
-    return () => {
-      console.log("Clearing the timer. ID: " + timerId);
-      // when component gets unmounted, clear the timer
-      clearTimeout(timerId);
-    }
-  });
+    const [counter, setCounter] = useState(0);
 
   function handleToggleThemeClick() {
     setSettings({...settings, dark_theme: !settings.dark_theme});
@@ -135,7 +124,6 @@ function App() {
               <button className='ui-button' onClick={() => setCounter(prevCounter => prevCounter + 1)}>Add</button>
             </div>
             <div className="display-block">
-              <Clock2 />
               <Stopwatch />
               <Count />
             </div>
