@@ -1,7 +1,10 @@
 import React, {useState} from "react";
+import useDocumentTitle from "./useDocumentTitle";
 
 export default function OrderQuantity() {
     const [quantity, setQuantity] = useState(0);
+
+    useDocumentTitle(`${quantity} items in your order`);
 
     return <div className="display-block">
         <h3>Your Order</h3>

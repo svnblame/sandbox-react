@@ -1,5 +1,6 @@
 import React, {useState, useEffect} from "react";
 import useWelcomeGreeting from "./useWelcomeGreeting";
+import useDocumentTitle from "./useDocumentTitle";
 import Link from "./Link";
 import Notifications from "./Notifications";
 import Container from "./Container";
@@ -29,6 +30,7 @@ import './App.css';
 
 function App() {
     useWelcomeGreeting();
+    useDocumentTitle('Welcome to the online store');
 
     const [name, setName] = useState("");
     const [settings, setSettings] = useState(() => {
