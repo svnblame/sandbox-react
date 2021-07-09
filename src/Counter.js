@@ -1,20 +1,14 @@
-import React, { useState } from "react";
+import React from "react";
+import useCounter from "./useCounter";
 
 export default function Counter(props) {
-    const [counter, setCounter] = useState(0);
-
-    function handleButtonClick() {
-        if ("increment" === props.mode) {
-            setCounter(counter + 1);
-        } else {
-            setCounter(counter - 1);
-        }
-    }
+    const {counter, increment, decrement} = useCounter();
 
     return (<>
         <p>
-            {props.mode}ing counter: {counter} times
-            <button className="ui-button" onClick={handleButtonClick}>{props.mode}</button>
+            <strong>Counter: {counter}</strong>
+            <button className="ui-button" onClick={increment}>+</button>
+            <button className="ui-button" onClick={decrement}>-</button>
         </p>
     </>);
 }
