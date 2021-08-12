@@ -1,9 +1,11 @@
 import { useState } from "react";
 
 export default function useFetch(baseUrl) {
-    const [loading, setLoading] = useState(true);
+    const [loading, setLoading] = useState(false);
 
     function get(url) {
+        setLoading(true);
+
         return new Promise((resolve, reject) => {
             fetch(baseUrl + url)
                 .then(response => response.json())
@@ -12,7 +14,7 @@ export default function useFetch(baseUrl) {
                         setLoading(false);
                         return reject(data);
                     }
-                    setLoading(fale);
+                    setLoading(false);
                     resolve(data);
                 })
                 .catch(error => {
@@ -23,6 +25,8 @@ export default function useFetch(baseUrl) {
     }
 
     function post(url, body) {
+        setLoading(true);
+        
         return new Promise((resolve, reject) => {
             fetch(baseUrl + url, {
                 method: "POST",
