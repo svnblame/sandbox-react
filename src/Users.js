@@ -1,33 +1,22 @@
 import {useState} from "react";
+import useFetch from "./useFetch";
 import Loader from "./Loader";
 
 export default function Users() {
     const [users, setUsers] = useState();
-    const [isUsersLoading, setIsUsersLoading] = useState(false);
-
+    const {get, loading} = useFetch("https://react-tutorial-demo.firebaseio.com/");
+    
     function handleLoadUsersClick() {
-        setIsUsersLoading(true);
-
-        setTimeout(() => {
-            console.log("Simulating slow network...");
-
-            fetch("https://react-tutorial-demo.firebaseio.com/users.json")
-                .then(response => response.json())
-                .then(data => {
-                    console.log('Fetched Users Data: ', data);
-                    setUsers(data);
-                })
-                .catch(error => console.log(error))
-                .finally(() => {
-                    setIsUsersLoading(false);
-                });
-        }, 3000);
+        get("users.json").then(data => {
+            setUsers(data);
+        })
+        .catch(error => console.error(error));
     }
 
     return <>
-        <button className="ui-button" onClick={handleLoadUsersClick} disabled={isUsersLoading}>Load Users</button>
+        <button className="ui-button" onClick={handleLoadUsersClick} disabled={loading}>Load Users</button>
         <h1>{users && users.length + " Users"}</h1>
-        {isUsersLoading && <Loader />}
+        {loading && <Loader />}
         <ul>
             {users && users.map(user => <li key={user.id}>{user.name}</li>)}
         </ul>
